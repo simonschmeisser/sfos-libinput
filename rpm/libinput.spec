@@ -70,7 +70,8 @@ intended to be run by users.
        -Dtests=true \
        -Dinstall-tests=true \
        -Dautoload-plugins=true \
-       -Dudev-dir=%{udevdir}
+       -Dudev-dir=%{udevdir} \
+       -Dlibwacom=false
 %meson_build
 
 %install
