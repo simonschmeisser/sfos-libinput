@@ -11,7 +11,7 @@ Summary:        Input device library
 # SPDX
 License:        MIT
 URL:            http://www.freedesktop.org/wiki/Software/libinput/
-Source0:        %{name}-%{gitdate}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  git-core
 BuildRequires:  gcc
