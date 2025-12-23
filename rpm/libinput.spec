@@ -11,13 +11,7 @@ Summary:        Input device library
 # SPDX
 License:        MIT
 URL:            http://www.freedesktop.org/wiki/Software/libinput/
-%if 0%{?gitdate}
-Source0:        %{name}-%{gitdate}.tar.xz
-Source1:        make-git-snapshot.sh
-Source2:        commitid
-%else
-Source0:        https://gitlab.freedesktop.org/libinput/libinput/-/archive/%{version}/libinput-%{version}.tar.bz2
-%endif
+Source0:        %{name}-%{gitdate}.tar.gz
 
 BuildRequires:  git-core
 BuildRequires:  gcc
@@ -25,7 +19,7 @@ BuildRequires:  meson
 BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(mtdev) >= 1.1.0
 BuildRequires:  pkgconfig(libevdev) >= 0.4
-BuildRequires:  pkgconfig(libwacom) >= 0.20
+#BuildRequires:  pkgconfig(libwacom) >= 0.20
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  python3-rpm-macros
 
@@ -66,7 +60,7 @@ The %{name}-test package contains the libinput test suite. It is not
 intended to be run by users.
 
 %prep
-%autosetup -S git -p1
+%autosetup -S git -p1 -n %{name}-%{version}/%{name}
 # Replace whatever the source uses with the approved call
 %py3_shebang_fix $(git grep -l  '#!/usr/bin/.*python3')
 
