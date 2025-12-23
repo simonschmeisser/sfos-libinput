@@ -62,7 +62,7 @@ intended to be run by users.
 %prep
 %autosetup -S git -p1 -n %{name}-%{version}/%{name}
 # Replace whatever the source uses with the approved call
-%py3_shebang_fix $(git grep -l  '#!/usr/bin/.*python3')
+# %py3_shebang_fix $(git grep -l  '#!/usr/bin/.*python3')
 
 %build
 %meson -Ddebug-gui=false \
